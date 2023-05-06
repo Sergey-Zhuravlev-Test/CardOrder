@@ -1,5 +1,6 @@
 package ru.netology;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class CardOrderTest {
     private WebDriver driver;
+
+    @BeforeAll
+    static void setupClass() {
+
+        WebDriverManager.chromedriver().setup();
+    }
 
 
     @BeforeEach
